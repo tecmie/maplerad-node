@@ -1,5 +1,5 @@
 {
-	"name": "maplerad-node",
+	"name": "@tecmie/maplerad-node",
 	"version": "0.0.1",
 	"description": "Un-Official Nodejs library for the Maplerad API",
   "main": "dist/client.js",
