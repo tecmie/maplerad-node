@@ -16,6 +16,18 @@ const counterparty_1 = __importDefault(require("./lib/counterparty"));
 const wallets_1 = __importDefault(require("./lib/wallets"));
 const transactions_1 = __importDefault(require("./lib/transactions"));
 class Maplerad {
+    secretKey;
+    Issuing;
+    Transfers;
+    Bills;
+    Fx;
+    Misc;
+    Collections;
+    Customers;
+    Institution;
+    Counterparty;
+    Wallets;
+    Transactions;
     // key can be gotten from your Maplerad dashboard.
     // environment can only be "live" or "sandbox".
     constructor(key, environment) {

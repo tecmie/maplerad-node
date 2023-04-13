@@ -1,9 +1,13 @@
 {
 	"name": "maplerad-node",
 	"version": "0.0.1",
-	"description": "Official Nodejs library for the Maplerad API",
-	"prepublish": "tsc",
-	"main": "client.ts",
+	"description": "Un-Official Nodejs library for the Maplerad API",
+  "main": "dist/client.js",
+  "types": "dist/client.d.ts",
+  "files": [
+    "package.json",
+    "dist"
+  ],
 	"scripts": {
 		"build": "npx tsc",
 		"dev": "ts-node client.ts"
@@ -19,8 +23,7 @@
 		"library",
 		"fintech"
 	],
-	"author": "Christian Ndu",
-	"license": "ISC",
+	"license": "MIT",
 	"dependencies": {
 		"axios": "^0.27.2"
 	},

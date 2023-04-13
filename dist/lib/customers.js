@@ -1,86 +1,84 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const path = "/customers";
 class Customers {
+    axios;
     constructor(axios) {
         this.axios = axios;
     }
-    CreateCustomer(payload) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const response = yield this.axios.post(`${path}`);
-                return response.data;
-            }
-            catch (error) {
-                return error;
-            }
-        });
+    async CreateCustomer(payload) {
+        try {
+            const response = await this.axios.post(`${path}`);
+            return response.data;
+        }
+        catch (error) {
+            return error;
+        }
     }
-    GetCustomer(customerID) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const response = yield this.axios.get(`${path}/${customerID}`);
-                return response.data;
-            }
-            catch (error) {
-                return error;
-            }
-        });
+    async UpgradeCustomerTier1(payload) {
+        try {
+            const response = await this.axios.patch(`${path}/upgrade/tier1`);
+            return response.data;
+        }
+        catch (error) {
+            return error;
+        }
     }
-    GetAllCustomers() {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const response = yield this.axios.get(`${path}`);
-                return response.data;
-            }
-            catch (error) {
-                return error;
-            }
-        });
+    async UpgradeCustomerTier2(payload) {
+        try {
+            const response = await this.axios.patch(`${path}/upgrade/tier2`);
+            return response.data;
+        }
+        catch (error) {
+            return error;
+        }
     }
-    GetCustomerCards(customerID) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const response = yield this.axios.get(`${path}/${customerID}/cards`);
-                return response.data;
-            }
-            catch (error) {
-                return error;
-            }
-        });
+    async GetCustomer(customerID) {
+        try {
+            const response = await this.axios.get(`${path}/${customerID}`);
+            return response.data;
+        }
+        catch (error) {
+            return error;
+        }
     }
-    GetCustomerTransactions(customerID) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const response = yield this.axios.get(`${path}/${customerID}/transactions`);
-                return response.data;
-            }
-            catch (error) {
-                return error;
-            }
-        });
+    async GetAllCustomers() {
+        try {
+            const response = await this.axios.get(`${path}`);
+            return response.data;
+        }
+        catch (error) {
+            return error;
+        }
     }
-    SetCustomerBlacklistActive(customerID, status) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const response = yield this.axios.post(`${path}/${customerID}/active`, {
-                    blacklist: status
-                });
-                return response.data;
-            }
-            catch (error) {
-                return error;
-            }
-        });
+    async GetCustomerCards(customerID) {
+        try {
+            const response = await this.axios.get(`${path}/${customerID}/cards`);
+            return response.data;
+        }
+        catch (error) {
+            return error;
+        }
+    }
+    async GetCustomerTransactions(customerID) {
+        try {
+            const response = await this.axios.get(`${path}/${customerID}/transactions`);
+            return response.data;
+        }
+        catch (error) {
+            return error;
+        }
+    }
+    async SetCustomerBlacklistActive(customerID, status) {
+        try {
+            const response = await this.axios.post(`${path}/${customerID}/active`, {
+                blacklist: status
+            });
+            return response.data;
+        }
+        catch (error) {
+            return error;
+        }
     }
 }
 exports.default = Customers;
