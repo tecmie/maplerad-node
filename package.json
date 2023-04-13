@@ -12,6 +12,9 @@
 		"build": "npx tsc",
 		"dev": "ts-node client.ts"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/wirepay/maplerad-node.git"
